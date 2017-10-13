@@ -1,0 +1,12 @@
+#include <iostream>
+
+using namespase std;
+
+int main()
+{
+	const double n = 0.0833333;
+	int dum;
+	cin >> dum;
+	cout << dum * n << endl;
+	return 0;
+}
