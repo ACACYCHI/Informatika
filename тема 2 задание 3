@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespase std;
+
+void func1()
+{
+	cout << "первое сообщение/n";
+}
+void func2()
+{
+	cout << "второе сообщение/n";
+}
+int main()
+{
+	func1();
+	func1();
+	func2();
+	func2();
+}
