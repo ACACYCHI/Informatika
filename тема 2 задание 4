@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespase std;
+
+int fahr(double cels)
+{
+	return (1, 8 * cels + 32);
+}
+
+int main()
+{
+	cout << fahr(24) << endl;
+	return 0;
+}
