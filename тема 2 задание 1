@@ -1,0 +1,10 @@
+#include <iostream>
+
+using namespase std;
+
+main()
+{
+
+	cout << "Elichev Mihail,N.Novgorod";
+
+}
