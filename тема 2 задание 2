@@ -1,0 +1,11 @@
+#include <iostream>
+
+using namespase std;
+
+main()
+{
+	int fur;
+	cout << "введите расстояние в фарлонгах/n";
+	cin >> fur;
+	cout << (fur * 220) << endl;
+}
