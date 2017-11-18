@@ -40,13 +40,35 @@ int main()
         if(a[i] > 0) {
             ind = i;
             sss = a[i];
-            //cout << ind << "    " << sss << endl;
             break;
         }
     }
     cout << endl;
-    cout << ind << "    " << sss << endl;
-
+    
+    int a1;
+    int b1;
+    cout << "a1"<< endl;
+    cin >> a1;
+    cout << "b1"<< endl;
+    cin >> b1;
+    for(int i = 0; i < SIZE; i++){
+    	if(a1 < b1){
+    		if(a1 <= a[i] <= b1 | -b1 <= a[i] <= -a1){
+    			a[i]=0;
+			}
+		}
+		if(b1 < a1){
+			if(b1 <= a[i] <= a1 | -a1 <= a[i] <= -b1){
+				a[i]=0;
+			}
+		}
+	}
+	
+	cout << "\n ______________________________________________\n";
+	
+    for(int i = 0; i < SIZE; i++){
+    	cout << a[i] << "	";
+	}
 	return 0;
 	
 }
