@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+ double Xn,Xk,dX;
+ double a,b,c;
+ cin >> Xn >> Xk >> dX >> a >> b >> c;
+ if((int(a) | int(b)) & int(c) !=0){ 
+    for(double x = Xn; x<= Xk; x+=dX){
+        double f;
+        if(x < 0 && b != 0) f = a-x/(10 + b);
+        else if(x > 0 && b == 0) f = (x - a)/(x - c);
+        else f= 3*x + 2/c;
+        cout << "x= " << x << "\tf = " << f << endl;  
+    } 
+ }
+ else{
+    for(double x = Xn; x<= Xk; x+=dX){ 
+        int f;
+        if(x < 0 && b != 0) f = a-x/(10 + b);
+        else if(x > 0 && b == 0) f = (x - a)/(x - c);
+        else f = 3*x + 2/c;
+        cout << "x= " << x << "\tf = " << f << endl;  
+    }
+ }
+}
