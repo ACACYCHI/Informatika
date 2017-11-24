@@ -10,8 +10,6 @@ int main()
     int SIZE;
     cout << "размер квадратной матрицы = ";
     cin >> SIZE;
-
-    //int a[SIZE][SIZE];
     
     int **a = new int* [SIZE];
     
