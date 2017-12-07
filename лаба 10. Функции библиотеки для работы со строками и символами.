@@ -1,0 +1,42 @@
+//создать текстовый фаил с названием cpp и записать туда текст
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <list>
+#include <iterator>
+#include <string>
+ 
+ using namespace std;
+ 
+int main(){
+    setlocale(LC_ALL, "Russian");
+    
+    string buf, tmp;
+    list<std::string> words;
+    ifstream fin("cpp.txt");
+    if ( !fin.is_open() ){
+        cerr << "error!" << endl;
+        return 1;
+    }
+    cout << endl << "весь текст:" << endl << endl;
+    while ( getline(fin, buf) ){
+        cout << buf << endl;
+        istringstream ist(buf);
+        while ( ist >> tmp ){
+            string::size_type pos = tmp.find_last_not_of(".,!@#$%^&*()_-+=;:'?|/<>`~[]{}");
+            if ( pos == string::npos )
+                continue;
+            tmp.erase(pos + 1);
+            if ( tmp.size() > 1 && *tmp.begin() == *tmp.rbegin() )
+                words.push_back(tmp);
+        }
+    }
+    fin.close();
+    words.sort();
+    words.unique();
+    cout << endl << "колличество слов в которых первая и последняя буквы одинаковы "  << words.size() << ":" << endl << endl;
+    copy(words.begin(), words.end(), ostream_iterator<string>(cout, "\n"));
+    cout << endl; 
+    system("PAUSE");
+    return 0;
+}
